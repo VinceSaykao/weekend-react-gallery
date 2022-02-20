@@ -31,7 +31,7 @@ function App() {
         console.log('Error', error);
       })
 
-      
+
   }; // end of fetchGallery
 
 
@@ -50,17 +50,14 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>Gallery goes here</p>
-      
-      <GalleryList 
-      fetchGallery={fetchGallery}/>
 
-      {galleryInfo.map((items) => (
-        <GalleryItem key={items.id}
-          path={items.path}
-          description={items.description}
-          likes={items.likes}
+      <GalleryList
+        fetchGallery={fetchGallery} 
+        galleryInfo={galleryInfo}
         />
-      ))}
+
+
+
 
       {/* <GalleryItem />  */}
 
@@ -69,3 +66,19 @@ function App() {
 }
 
 export default App;
+
+
+
+/*
+
+
+ {galleryInfo.map((items) => (
+        <GalleryItem key={items.id}
+          path={items.path}
+          description={items.description}
+          likes={items.likes}
+        />
+      ))}
+
+
+*/

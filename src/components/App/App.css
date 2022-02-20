@@ -20,8 +20,17 @@ img {
 }
 
 .image-stuff {
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  margin: auto;
 
 
 
 }
 
+
+.image-stuff * {
+  margin: 0.5rem 3rem;
+
+}

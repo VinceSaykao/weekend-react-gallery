@@ -1,6 +1,7 @@
 import axios from "axios"
+import GalleryItem from "../GalleryItem/GalleryItem.jsx"
 
-function GalleryList(galleryInfo,fetchGallery) {
+function GalleryList({galleryInfo,fetchGallery}) {
 
 // let [galleryListing,setgalleryListing] = useState('');
 
@@ -15,15 +16,13 @@ axios.put('/like')
         <>
 
 
-       
 
 
-
-
-        
-        
-        
-        
+        {galleryInfo.map((items) => (
+        <GalleryItem key={items.id}
+          items={items}
+        />
+      ))}
         </>
 
     )

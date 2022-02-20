@@ -1,6 +1,9 @@
 // import images from '../images'
 
-function GalleryItem(path,description,likes) {
+function GalleryItem({items}) {
+
+const [liked,setLiked] = ('');
+
 /*
     const handleLike = () => {
         console.log('You Liked!');
@@ -14,33 +17,48 @@ function GalleryItem(path,description,likes) {
         })
 
     }; // end of handleLike
+    
+
+
+likeStatus = () => {
+        if ({items.likes} === 0) {
+            return 'No people love this :('
+        } else ({items.likes} > 0) {
+            return <p>
+            {items.likes} Love this!
+            </p>
+
+    
     */
 
+ 
+
+
+
+    console.log({items})
 return (
 <>
 
 
 <div className="image-stuff">
-<img src="images/goat_small.jpg"/>
+<img src={items.path}/>
 <br></br>
-<button>Love It!</button>
+<button
+
+>Love It!</button>
 <p>
-    4 People Love This!
+{items.description}
 </p>
+<p>
+{items.likes} Love this!
+</p>
+
 </div>
 
-
-<p>
-
-</p>
 
 
 
 </>
-
-
-
-
 )
 
 
