@@ -1,12 +1,33 @@
+body {
+  background-color: rgb(56, 56, 56);
+  display: flex;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
+  background-color: #FF5154;
+  width: 90%;
+  margin: auto;
+  border: 5px solid white;
+  border-style:dashed;
+  height: 40rem;
+  
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #588B8B;
   padding: 1em;
   color: white;
   margin-bottom: 1em;
+  margin: auto;
+  border: 5px solid white;
+  border-style:double;
+
 }
 
 .App-title {
@@ -31,6 +52,35 @@ img {
 
 
 .image-stuff * {
-  margin: 0.5rem 3rem;
+  margin: 0.5rem 3rem auto;
 
 }
+
+.image-description {
+  background-color: #4444;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  
+
+
+}
+
+.description {
+  margin: 0 auto;
+  vertical-align: middle;
+  color:white;
+  width: 100px;
+  height: 100px;
+
+}
+
+#like {
+  margin-top:4px;
+  width: 60px;
+}
+
+
+
+
+
