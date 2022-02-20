@@ -24,6 +24,7 @@ body {
   height: 40rem;
   position: relative;
   border-radius: 10px;
+  box-shadow: 0 40px 100px -2px rgba(250, 182, 182, 0.925);
 }
 
 .App-header {
