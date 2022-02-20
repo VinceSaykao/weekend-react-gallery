@@ -42,10 +42,11 @@ function App() {
   return (
 
     <div className="App">
-
+      
+      
 
       <header className="App-header">
-        <h1 className="App-title">Gallery of My Life</h1>
+        <h1 className="App-title">Saykao Gallery</h1>
       </header>
 
       <GalleryList
@@ -53,15 +54,40 @@ function App() {
         galleryInfo={galleryInfo}
         />
 
-
-  
-
+      
 
 
+<div>
+    <img id="camera" src="/images/camera.png"/>
+    </div>
 
-      {/* <GalleryItem />  */}
+
+<button id="add-photo">
+<h2>Add Photo</h2>
+</button>
+
+<div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        
+        
+        
+                </div>
+        
+
+
 
     </div>
+  
+    
   );
 }
 

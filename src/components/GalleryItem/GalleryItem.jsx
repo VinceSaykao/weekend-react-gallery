@@ -52,7 +52,7 @@ function GalleryItem({ items, fetchGallery }) {
             <div className="image-stuff">
                 {toggled ? (
                     <div className="galleryInfo">
-                    <img id={items.id} src={items.path} onClick={() => toggleImage()}/>
+                    <img className="imaging" id={items.id} src={items.path} onClick={() => toggleImage()}/>
                     </div>
                 ) : (
                 <div className="image-description" onClick={() => toggleImage()}>
@@ -64,7 +64,7 @@ function GalleryItem({ items, fetchGallery }) {
                  )}
 
                 <p>{vote} Love It!</p>
-                <img id="like" src="images/loveit.png" onClick={upVote}/>
+                <img id="like" src="images/loveit.png" onClick={upVote} alt="love it"/>
                
                 
         

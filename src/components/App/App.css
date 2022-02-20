@@ -1,22 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Shizuru&display=swap" rel="stylesheet');
+
+
+
 body {
-  background-color: rgb(56, 56, 56);
   display: flex;
-  background-color: black;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
+  background-image: url("night.jpeg");
+  background-position: 20px -100px;
+  backdrop-filter: blur(2px);
 }
 
 .App {
   text-align: center;
   background-color: #FF5154;
-  width: 90%;
+  width: 600px;
+  height: 300px;
   margin: auto;
   border: 5px solid white;
   border-style:dashed;
   height: 40rem;
-  
+  position: relative;
+  border-radius: 10px;
 }
 
 .App-header {
@@ -27,16 +34,21 @@ body {
   margin: auto;
   border: 5px solid white;
   border-style:double;
-
+  text-shadow: 3px 7px 1px rgba(0,0,0,0.5);
+  border-radius: 10px;
 }
 
 .App-title {
   font-size: 1.5em;
+  font-family: 'Shizuru', cursive;
+  text-transform: uppercase;
+  letter-spacing: 15px;
 }
 
 img {
   height: 100px;
   width: 100px;
+  border: 5px solid white;
  
 }
 
@@ -52,18 +64,36 @@ img {
 
 
 .image-stuff * {
-  margin: 0.5rem 3rem auto;
+  margin: 0.5rem 5rem auto;
 
 }
 
 .image-description {
-  background-color: #4444;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.336);
+  border-radius: 100px;
+  border: 1px solid white;
+  margin: 0 auto;
+  vertical-align: middle;
+  color:white;
   width: 100px;
   height: 100px;
-  border-radius: 10px;
-  
+  position: relative;
+  justify-content: center;
+  align-items: center;
 
 
+}
+
+.imaging {
+  margin: 0 auto;
+  vertical-align: middle;
+  color:white;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .description {
@@ -72,15 +102,146 @@ img {
   color:white;
   width: 100px;
   height: 100px;
-
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 #like {
   margin-top:4px;
   width: 60px;
+  border: none;
+}
+
+p {
+  color:rgb(37, 126, 167);
+  background-color: white;
+  border-radius: 10px;
+  font-family: 'Shizuru', cursive;
+
+}
+
+#camera { 
+  -webkit-transform:rotate(120deg);
+  margin-top: -680px;
+  margin-left: 300px;
+  width:100px;
+  height: 150px;
+  border: 5px solid #b5f5f5;
+  border-radius: 50px;
+  border-style:double;
+  position: absolute;
+  z-index: -1;
+
+
+  
+}
+
+h2 {
+  color:white;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+#add-photo {
+  border-radius: 10px;
+  background-color: rgba(119, 119, 119, 0.5);
+  border: none;
+
+}
+
+h2:hover {
+  color: #FF5154;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+#camera:hover {
+  -webkit-transform:rotate(-220deg);
+  margin-top: -680px;
+  margin-left: 300px;
+  width:100px;
+  height: 150px;
+  border: 5px solid #b5f5f5;
+  border-radius: 50px;
+  border-style:double;
+  position: absolute;
+  z-index: -1;
+  animation: animate 5s linear infinite;
+  
+
+}
+
+@keyframes animate
+{
+  0% 
+  {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
 }
 
 
 
+
+
+
+.loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.loader span {
+  position: absolute;
+  top: -300px;
+  left: -200px;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(36deg * var()));
+  
+}
+.loader span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid #00efff;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px #00efff, -30px -30px 0 #00efff, -30px -30px 20px #00efff,
+    30px 30px 0 #00efff, 30px 30px 20px #00efff, 30px -30px 0 #00efff,
+    30px -30px 20px #00efff, -30px 30px 0 #00efff, -30px 30px 20px #00efff;
+
+  animation: animate 5s linear infinite;
+  animation-delay: calc(-0.5s * var(--i));
+  transform-origin: 20px;
+  transition: 2s;
+}
+
+.loader:hover span::before {
+    transform-origin: 250px;
+
+    box-shadow: 0 0 20px #00efff, -200px -200px 0 #00efff, -200px -200px 20px #00efff,
+    200px 200px 0 #00efff, 200px 200px 20px #00efff, 200px -30px 0 #00efff,
+    200px -30px 20px #00efff, -200px 30px 0 #00efff, -200px 30px 20px #00efff;
+}
+
+@keyframes animate
+{
+  0% 
+  {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
 
 
