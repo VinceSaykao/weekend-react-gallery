@@ -17,8 +17,16 @@ router.put('/like/:id', (req, res) => {
 }); // END PUT Route
 
 // GET Route
-router.get('/', (req, res) => {
+router.get('/gallery', (req, res) => {
     res.send(galleryItems);
+    const sqlText = 'SELECT * FROM gallery'
+    pool.query(sqlText)
+    .then((response) => {
+        res.send(result.rows)
+    .catch((error) => {
+        console.log('CATCH GET' , error);
+    })
+    })
 }); // END GET Route
 
 module.exports = router;
