@@ -17,7 +17,7 @@ router.put('/like/:id', (req, res) => {
 }); // END PUT Route
 
 // GET Route
-router.get('/gallery', (req, res) => {
+router.get('/', (req, res) => {
     res.send(galleryItems);
     const sqlText = 'SELECT * FROM gallery'
     pool.query(sqlText)
