@@ -1,11 +1,11 @@
 const express = require('express');
-const pool = require('../../../group-fs-react-shopping-list/server/modules/pool');
+const pool = require('../modules/pool');
 const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
-
+/*
 // POST Route
 router.post('/', (req,res) => {
     const sqlText = `
@@ -33,6 +33,23 @@ router.post('/', (req,res) => {
     })
 }); // END POST Route
 
+*/
+
+
+
+// GET Route
+router.get('/', (req, res) => {
+    const sqlText = `SELECT * FROM gallery`;
+    pool.query(sqlText)
+        .then((result) => {
+            res.send(result.rows);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500);
+        });
+});
+
 // PUT Route
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
@@ -45,17 +62,5 @@ router.put('/like/:id', (req, res) => {
     res.sendStatus(200);
 }); // END PUT Route
 
-// GET Route
-router.get('/', (req, res) => {
-    res.send(galleryItems);
-    const sqlText = 'SELECT * FROM gallery'
-    pool.query(sqlText)
-    .then((response) => {
-        res.send(result.rows)
-    .catch((error) => {
-        console.log('CATCH GET' , error);
-    })
-    })
-}); // END GET Route
 
 module.exports = router;

@@ -15,9 +15,6 @@ axios.put('/like')
     return (
         <>
 
-
-
-
         {galleryInfo.map((items) => (
         <GalleryItem key={items.id}
           items={items}

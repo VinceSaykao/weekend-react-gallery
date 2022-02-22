@@ -15,6 +15,7 @@ function GalleryItem({ items, fetchGallery }) {
     const toggleImage = () => 
     setToggled(!toggled);
 
+    /*
     const handleLike = () => {
         console.log('You Liked!');
         axios
@@ -29,21 +30,9 @@ function GalleryItem({ items, fetchGallery }) {
 
     }; // end of handleLike
 
-
-
-    /*
-    const likeStatus = () => {
-    
-            if ({items.likes} === 0) {
-                return 'No people love this :('
-            } else ({items.likes} > 0) {
-                return <p>
-                {items.likes} Love this!
-                </p>
-            }
-        }
-    
     */
+
+
 
     console.log({ items })
     return (

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 import GalleryList from '../GalleryList/GalleryList.jsx';
 import axios from 'axios';
 
@@ -23,9 +22,9 @@ function App() {
   const fetchGallery = () => {
     axios.get('/gallery')
       .then((response) => {
-        let info = response.data;
-        console.log('this is the response from fetchGallery', info);
-        setGalleryInfo(info);
+        console.log('this is the response from fetchGallery', response.data);
+        console.log('resonse',response)
+        setGalleryInfo(response.data);
       })
       .catch((error) => {
         console.log('Error', error);
@@ -66,25 +65,11 @@ function App() {
 <h2>Add Photo</h2>
 </button>
 
-<div class="loader">
+<div className="loader">
             <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        
-        
-        
+
                 </div>
         
-
-
-
     </div>
   
     
@@ -94,17 +79,3 @@ function App() {
 export default App;
 
 
-
-/*
-
-
- {galleryInfo.map((items) => (
-        <GalleryItem key={items.id}
-          path={items.path}
-          description={items.description}
-          likes={items.likes}
-        />
-      ))}
-
-
-*/
